@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CounterState } from '../state/counter.state';
 import { getName } from '../state/counter.selectors';
 import { changeName, customIncrement } from '../state/counter.actions';
+import { AppState } from '../../store/app.state';
 
 @Component({
   selector: 'app-custom-counter-input',
@@ -20,7 +21,7 @@ export class CustomCounterInputComponent implements OnInit{
 value:number = 0;
 name:string ='';
 name$!: Observable<string>
-constructor(private store:Store<{counter:CounterState}>){}
+constructor(private store:Store<AppState>){}
   ngOnInit(): void {
    
     this.name$ = this.store.select(getName);

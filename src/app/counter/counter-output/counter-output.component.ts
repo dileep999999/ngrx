@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CounterState } from '../state/counter.state';
 import { getCounter } from '../state/counter.selectors';
+import { AppState } from '../../store/app.state';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CounterOutputComponent implements OnInit{
   counter: number = 0;
   counterSubscription!: Subscription;
   counter$!: Observable<number>;
-  constructor(private store: Store<{counter:CounterState}>){}
+  constructor(private store: Store<AppState>){}
   
   ngOnInit(): void {
     
