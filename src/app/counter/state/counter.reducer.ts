@@ -35,6 +35,6 @@ on(changeName, (state)=>{
 })
 )
 
-export function counterReducer(state: { counter: number; name:string } | undefined, action: Action){
+export function counterReducer(state = initialState, action: Action){
     return _counterReducer(state,action);
 }

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CounterState } from '../../state/counter.state';
+
 import { Store } from '@ngrx/store';
-import { changeName, customIncrement } from '../../state/counter.actions';
-import { getName } from '../../state/counter.selectors';
+
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { CounterState } from '../state/counter.state';
+import { getName } from '../state/counter.selectors';
+import { changeName, customIncrement } from '../state/counter.actions';
 
 @Component({
   selector: 'app-custom-counter-input',
