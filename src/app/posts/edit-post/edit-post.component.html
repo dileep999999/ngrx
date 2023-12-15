@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        
+            <h3>Update Post</h3>
+            <hr />
+            <form [formGroup]="postForm" >
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input type="text" class="form-control" formControlName="title"/>
+                    @if(postForm.get('title')?.touched && !postForm.get('title')?.valid){
+                        @if(postForm.get('title')?.errors!['required']){
+                            <div>Title is required</div>
+                        }
+                        @if(postForm.get('title')?.errors!['minlength']){
+                            <div>Title should be minimum 6 characters</div>
+                        }
+                    }
+                </div>
+                <div class="mb-3">
+                    <label>Description</label>
+                    <textarea class="form-control" formControlName="description"></textarea>
+                    @if(postForm.get('description')?.touched && !postForm.get('description')?.valid){
+                        @if(postForm.get('description')?.errors!['required']){
+                            <div>Title is required</div>
+                        }
+                        @if(postForm.get('description')?.errors!['minlength']){
+                            <div>Title should be minimum 6 characters</div>
+                        }
+                    }
+                </div>
+                <div class="my-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="!postForm.valid">Update Post</button>
+                </div>
+            </form>
+        
+    </div>
+</div>
