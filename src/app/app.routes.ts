@@ -9,13 +9,12 @@ export const routes: Routes = [{
     path: '', component:HomeComponent
 },
 {
-    path: 'counter', component: CounterComponent
+    path: 'counter', 
+    loadChildren: ()=>import('./counter/counter.routes').then(m=>m.routes)
 },
 {
-    path: 'posts', component: PostsListComponent,
-    children: [
-        {path: 'add', component: AddPostComponent},
-        {path:'edit/:id', component: EditPostComponent}
-    ]
+    path: 'posts',
+    loadChildren: ()=>import('./posts/posts.routes').then(m=>m.routes)
+   
 }
 ];
