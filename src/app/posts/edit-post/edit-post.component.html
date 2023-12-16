@@ -3,7 +3,7 @@
         
             <h3>Update Post</h3>
             <hr />
-            <form [formGroup]="postForm" >
+            <form [formGroup]="postForm" (ngSubmit)="onSubmit()" >
                 <div class="mb-3">
                     <label>Title</label>
                     <input type="text" class="form-control" formControlName="title"/>

@@ -6,6 +6,7 @@ import { Post } from './state/posts.state';
 import { getPosts } from './state/posts.selector';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { deletePost } from './state/posts.action';
 
 @Component({
   selector: 'app-posts-list',
@@ -20,4 +21,8 @@ constructor(private store: Store<AppState>){}
   ngOnInit(): void {
     this.posts = this.store.select(getPosts);
   }
+  delete(id:string=''){
+    this.store.dispatch(deletePost({id}));
+  }
 }
+
