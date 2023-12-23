@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CounterComponent } from './counter/counter/counter.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 
